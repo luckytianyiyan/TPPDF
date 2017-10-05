@@ -38,6 +38,10 @@ extension PDFGenerator {
         commands += [(container, .addImage(image: image, size: size, caption: caption, sizeFit: sizeFit))]
     }
     
+    open func addFixedImage(_ container: Container = Container.contentLeft, image: UIImage, fixedSize: CGSize) {
+        commands += [(container, .addFixedImage(image: image, fixedSize: fixedSize))]
+    }
+    
     open func addImagesInRow(_ container: Container = Container.contentLeft, images: [UIImage], captions: [NSAttributedString] = [], spacing: CGFloat = 5.0) {
         commands += [(container, .addImagesInRow(images: images, captions: captions, spacing: spacing))]
     }

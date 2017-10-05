@@ -21,6 +21,9 @@ extension PDFGenerator {
         case let .addImage(image, size, caption, sizeFit):
             drawImage(container, image: image, size: size, caption: caption, sizeFit: sizeFit)
             break
+        case let .addFixedImage(image, size):
+            drawFixedImage(container, image: image, size: size)
+            break
         case let .addImagesInRow(images, captions, spacing):
             drawImagesInRow(container, images: images, captions: captions, spacing: spacing)
             break

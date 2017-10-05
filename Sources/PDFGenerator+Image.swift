@@ -48,6 +48,44 @@ extension PDFGenerator {
         drawImage(container, image: image, frame: frame, caption: caption)
     }
     
+    func drawFixedImage(_ container: Container, image: UIImage, size: CGSize) {
+        let imageSize = size
+        
+        let y: CGFloat = {
+            switch container.normalize {
+            case .headerLeft:
+                return headerHeight[container]!
+            case .contentLeft:
+                if contentHeight + imageSize.height > contentSize.height {
+                    generateNewPage()
+                    
+                    return contentHeight + maxHeaderHeight() + headerSpace
+                }
+                return contentHeight + maxHeaderHeight() + headerSpace
+            case .footerLeft:
+                return contentSize.height + maxHeaderHeight() + footerHeight[container]!
+            default:
+                return 0
+            }
+        }()
+        
+        let x: CGFloat = {
+            switch container {
+            case .headerLeft, .contentLeft, .footerLeft:
+                return pageMargin + indentation[container.normalize]!
+            case .headerCenter, .contentCenter, .footerCenter:
+                return pageBounds.midX - imageSize.width / 2
+            case .headerRight, .contentRight, .footerRight:
+                return pageBounds.width - pageMargin - imageSize.width
+            default:
+                return 0
+            }
+        }()
+        
+        let frame = CGRect(x: x, y: y, width: imageSize.width, height: imageSize.height)
+        drawImage(container, image: image, frame: frame, caption: NSAttributedString())
+    }
+    
     func drawImagesInRow(_ container: Container, images: [UIImage], captions: [NSAttributedString], spacing: CGFloat) {
         assert(images.count > 0, "You need to provide at least one image!")
         
