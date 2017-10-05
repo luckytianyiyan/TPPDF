@@ -137,22 +137,26 @@ extension PDFGenerator {
     }
     
     func drawImage(_ container: Container, image: UIImage, frame: CGRect, caption: NSAttributedString) {
-        // resize
-        let resizeFactor = (3 * imageQuality > 1) ? 3 * imageQuality : 1
-        let resizeImageSize = CGSize(width: frame.size.width * resizeFactor, height: frame.size.height * resizeFactor)
-        
-        UIGraphicsBeginImageContext(resizeImageSize)
-        image.draw(in: CGRect(x:0, y:0, width: resizeImageSize.width, height: resizeImageSize.height))
-        var compressedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        // compression
-        if let image = compressedImage, let jpegData = UIImageJPEGRepresentation(image, imageQuality) {
-            compressedImage = UIImage(data: jpegData)
-        }
-        
-        if let resultImage = compressedImage {
-            resultImage.draw(in: frame)
+        if let imageQuality = self.imageQuality {
+            // resize
+            let resizeFactor = (3 * imageQuality > 1) ? 3 * imageQuality : 1
+            let resizeImageSize = CGSize(width: frame.size.width * resizeFactor, height: frame.size.height * resizeFactor)
+            
+            UIGraphicsBeginImageContext(resizeImageSize)
+            image.draw(in: CGRect(x:0, y:0, width: resizeImageSize.width, height: resizeImageSize.height))
+            var compressedImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            // compression
+            if let image = compressedImage, let jpegData = UIImageJPEGRepresentation(image, imageQuality) {
+                compressedImage = UIImage(data: jpegData)
+            }
+            
+            if let resultImage = compressedImage {
+                resultImage.draw(in: frame)
+            } else {
+                image.draw(in: frame)
+            }
         } else {
             image.draw(in: frame)
         }

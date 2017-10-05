@@ -27,9 +27,9 @@ open class PDFGenerator  {
     
     open var paginationContainer = Container.none
     
-    open var imageQuality: CGFloat = 0.8 {
+    open var imageQuality: CGFloat? = 0.8 {
         didSet {
-            if imageQuality > 1 {
+            if let quality = imageQuality, quality > 1 {
                 imageQuality = 1
             }
         }
