@@ -22,7 +22,7 @@ extension PDFGenerator {
             }
         }()
         
-        drawLine(start: CGPoint(x: pageMargin + indentation[container.normalize]!, y: y), end: CGPoint(x: contentSize.width - indentation[container.normalize]!, y: y), style: style)
+        drawLine(start: CGPoint(x: pageMargin + indentation[container.normalize]!, y: y), end: CGPoint(x: pageMargin + contentSize.width - indentation[container.normalize]!, y: y), style: style)
     }
     
     func drawLine(start: CGPoint, end: CGPoint, style: LineStyle) {
