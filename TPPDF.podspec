@@ -11,6 +11,7 @@ TPPDF is a PDF builder based on the 'Builder' pattern. It uses the built-in fram
   s.author           = { 'Philip Niedertscheider' => 'phil@techprimate.com' }
   s.source           = { :git => 'https://github.com/Techprimate/TPPDF.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/techprimate'
+  s.swift_version    = '4.2'
 
   s.ios.deployment_target = '8.0'
 

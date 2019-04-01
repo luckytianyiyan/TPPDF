@@ -20,7 +20,7 @@ public struct TableStyleDefaults {
         ),
         rowHeaderStyle: TableCellStyle(
             fillColor: UIColor.white,
-            textColor: UIColor(colorLiteralRed: 59.0 / 255.0, green: 59.0 / 255.0, blue: 59.0 / 255.0, alpha: 1.0),
+            textColor: #colorLiteral(red: 0.231372549, green: 0.231372549, blue: 0.231372549, alpha: 1),
             font: UIFont.boldSystemFont(ofSize: 12.0),
             
             borderLeft: LineStyle(
@@ -39,7 +39,7 @@ public struct TableStyleDefaults {
             )
         ),
         columnHeaderStyle: TableCellStyle(
-            fillColor: UIColor(colorLiteralRed: 83.0 / 255.0, green: 171.0 / 255.0, blue: 104.0 / 255.0, alpha: 1.0),
+            fillColor: #colorLiteral(red: 0.3254901961, green: 0.6705882353, blue: 0.4078431373, alpha: 1),
             textColor: UIColor.white,
             font: UIFont.boldSystemFont(ofSize: 14),
             
@@ -57,8 +57,8 @@ public struct TableStyleDefaults {
             )
         ),
         contentStyle: TableCellStyle(
-            fillColor: UIColor(colorLiteralRed: 246.0 / 255.0, green: 246.0 / 255.0, blue: 246.0 / 255.0, alpha: 1.0),
-            textColor: UIColor(colorLiteralRed: 59.0 / 255.0, green: 59.0 / 255.0, blue: 59.0 / 255.0, alpha: 1.0),
+            fillColor: #colorLiteral(red: 0.9647058824, green: 0.9647058824, blue: 0.9647058824, alpha: 1),
+            textColor: #colorLiteral(red: 0.231372549, green: 0.231372549, blue: 0.231372549, alpha: 1),
             font: UIFont.systemFont(ofSize: 14),
             
             borderLeft: LineStyle(
@@ -75,8 +75,8 @@ public struct TableStyleDefaults {
             )
         ),
         alternatingContentStyle: TableCellStyle(
-            fillColor: UIColor(colorLiteralRed: 233.0 / 255.0, green: 233.0 / 255.0, blue: 233.0 / 255.0, alpha: 1.0),
-            textColor: UIColor(colorLiteralRed: 59.0 / 255.0, green: 59.0 / 255.0, blue: 59.0 / 255.0, alpha: 1.0),
+            fillColor: #colorLiteral(red: 0.9137254902, green: 0.9137254902, blue: 0.9137254902, alpha: 1),
+            textColor: #colorLiteral(red: 0.231372549, green: 0.231372549, blue: 0.231372549, alpha: 1),
             font: UIFont.systemFont(ofSize: 14),
             
             borderLeft: LineStyle(

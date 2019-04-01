@@ -148,7 +148,7 @@ extension PDFGenerator {
             UIGraphicsEndImageContext()
             
             // compression
-            if let image = compressedImage, let jpegData = UIImageJPEGRepresentation(image, imageQuality) {
+            if let image = compressedImage, let jpegData = image.jpegData(compressionQuality: imageQuality) {
                 compressedImage = UIImage(data: jpegData)
             }
             
