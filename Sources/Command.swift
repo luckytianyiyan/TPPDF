@@ -23,5 +23,5 @@ public enum Command {
     case setOffset(points: CGFloat)
     case setFont(font: UIFont)
     
-    case createNewPage()
+    case createNewPage
 }

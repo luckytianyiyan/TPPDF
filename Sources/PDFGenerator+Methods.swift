@@ -73,6 +73,6 @@ extension PDFGenerator {
     }
    
     open func createNewPage() {
-        commands += [(.contentLeft, .createNewPage())]
+        commands += [(.contentLeft, .createNewPage)]
     }
 }

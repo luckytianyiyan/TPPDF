@@ -16,9 +16,11 @@
     "tag": "0.4.0"
   },
   "social_media_url": "https://twitter.com/techprimate",
+  "swift_versions": "5",
   "platforms": {
     "ios": "8.0"
   },
   "source_files": "Sources/**/*",
-  "frameworks": "UIKit"
+  "frameworks": "UIKit",
+  "swift_version": "5"
 }
